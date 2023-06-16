@@ -12,24 +12,27 @@
 }
 
 .board {
-  width: calc(64px * 8);
-  height: calc(64px * 8);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: calc(80px * 8);
+  height: calc(80px * 8);
   display: flex;
   flex-wrap: wrap;
 }
 
-.field {
-  width: 64px;
-  height: 64px;
+.square {
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.blackField {
+.black {
   background-color: darkslategray;
 }
 
-.whiteField {
+.white {
   background-color: antiquewhite;
 }
