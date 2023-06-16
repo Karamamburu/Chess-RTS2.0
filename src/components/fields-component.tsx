@@ -1,6 +1,6 @@
 import React from 'react';
 
-const fieldComponent = () => {
+const FieldComponent = () => {
   return (
     <div className='field'>
 
@@ -8,4 +8,4 @@ const fieldComponent = () => {
   )
 }
 
-export default fieldComponent
+export default FieldComponent
