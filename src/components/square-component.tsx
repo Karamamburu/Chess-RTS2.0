@@ -10,7 +10,7 @@ const SquareComponent: FC<SquareProps> = ({square}) => {
     <div 
       className={[square.color, 'square'].join(' ')}
     >
-      
+      {square.piece?.img && <img src={square.piece.img} alt=''/>}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { Colors } from './colors';
-import Piece from './pieces/piece';
+import { Piece } from './pieces/piece';
 import { Board } from './board';
 
 export class Square {
