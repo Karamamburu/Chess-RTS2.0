@@ -29,6 +29,12 @@
   align-items: center;
 }
 
+.square img {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
 .black {
   background-color: darkslategray;
 }
