@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { SquareComponent } from './square-component';
 import { Board } from '../models/board';
 import { Square } from '../models/square';
@@ -15,6 +15,20 @@ function selectPiece(square: Square) {
   if (square.piece) {
     setSelectedSquare(square);
   }
+}
+
+useEffect(() => {
+  highlightSquare()
+}, [selectedSquare])
+
+function highlightSquare() {
+  board.highlightSquare(selectedSquare)
+  updateBoard()
+}
+
+function updateBoard() {
+  const newBoard = board.getCopyBoard()
+  setBoard(newBoard)
 }
 
   return (

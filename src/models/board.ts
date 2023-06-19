@@ -26,6 +26,23 @@ export class Board {
     }
   }
 
+  public getCopyBoard(): Board {
+    const newBoard = new Board();
+    newBoard.squares = this.squares;
+
+    return newBoard;
+  }
+
+  public highlightSquare(selectedSquare: Square | null) {
+    for (let i = 0; i < this.squares.length; i++) {
+      const rank = this.squares[i];
+      for (let j = 0; j < rank.length; j++) {
+        const targetSquare = rank[j];
+        targetSquare.isAvailable = !!selectedSquare?.piece?.ableToMove(targetSquare);
+      }
+    }
+  }
+
   public getSquare(x: number, y: number) {
     return this.squares[x][y]
   }
