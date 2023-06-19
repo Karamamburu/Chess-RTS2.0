@@ -20,4 +20,12 @@ export class Square {
       this.isAvailable = false;
       this.id = Math.random();
     }
+
+    movePiece(target: Square) {
+      if (this.piece && this.piece?.ableToMove(target)) {
+        this.piece.movePiece(target);
+        target.piece = this.piece;
+        this.piece = null;
+      }
+    }
 }

@@ -12,7 +12,10 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
   const [selectedSquare, setSelectedSquare] = useState<Square | null>(null)
 
 function selectPiece(square: Square) {
-  if (square.piece) {
+  if (selectedSquare && selectedSquare !== square && selectedSquare.piece?.ableToMove(square)) {
+    selectedSquare.movePiece(square);
+    setSelectedSquare(null);
+  } else {
     setSelectedSquare(square);
   }
 }
