@@ -8,7 +8,7 @@ export enum PiecesNames {
   "QUEEN" = "Queen",
   "BISHOP" = "Bishop",
   "ROOK" = "Rook",
-  "KNIGTH" = "Knight",
+  "KNIGHT" = "Knight",
   "PAWN" = "Pawn",
 }
 

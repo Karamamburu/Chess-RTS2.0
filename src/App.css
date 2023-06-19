@@ -42,3 +42,14 @@
 .white {
   background-color: antiquewhite;
 }
+
+.selected {
+  background-color: lightblue;
+}
+
+.available-to-move {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: gray;
+}
