@@ -9,7 +9,7 @@ export class Square {
     piece: Piece | null;
     board: Board;
     isAvailable: boolean;
-    id: string;
+    id: number;
 
     constructor(board: Board, x: number, y: number, color: Colors, piece: Piece | null) {
       this.x =  x;
@@ -18,6 +18,6 @@ export class Square {
       this.piece = piece;
       this.board = board;
       this.isAvailable = false;
-      this.id = crypto.randomUUID();
+      this.id = Math.random();
     }
 }
