@@ -1,23 +1,10 @@
-const letterConverter = {
-  "a": 0,
-  "b": 1,
-  "c": 2,
-  "d": 3,
-  "e": 4,
-  "f": 5,
-  "g": 6,
-  "h": 7,
+function letterToNumberConverter(square: string): { x: number; y: number } {
+  const file = square.charAt(0);
+  const rank = parseInt(square.charAt(1), 10) - 1;
+  const x = file.charCodeAt(0) - 'a'.charCodeAt(0);
+  const y = 7 - rank;
+
+  return { x, y };
 }
 
-const numberConverter = {
-  "1": 0,
-  "2": 1,
-  "3": 2,
-  "4": 3,
-  "5": 4,
-  "6": 5,
-  "7": 6,
-  "8": 7,
-}
-
-export { letterConverter, numberConverter }
+export { letterToNumberConverter }
