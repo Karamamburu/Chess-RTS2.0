@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BoardComponent } from './components/board-component';
-import { Board } from './models/board';
+import Board from './models/board';
+import { classicChessPiecesPosition } from './models/starting-positions';
 
 function App() {
   const [board, setBoard] = useState(new Board())
@@ -13,7 +14,7 @@ function App() {
   function restart() {
     const newBoard = new Board()
     newBoard.createSquares()
-    newBoard.placePieces()
+    newBoard.placePieces(classicChessPiecesPosition)
     setBoard(newBoard)
   }
   

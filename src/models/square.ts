@@ -1,8 +1,8 @@
 import { Colors } from './colors';
-import { Piece } from './pieces/piece';
-import { Board } from './board';
+import Piece from './pieces/piece';
+import Board from './board';
 
-export class Square {
+export default class Square {
     readonly x: number;
     readonly y: number;
     readonly color: Colors;
@@ -12,7 +12,7 @@ export class Square {
     id: number;
 
     constructor(board: Board, x: number, y: number, color: Colors, piece: Piece | null) {
-      this.x =  x;
+      this.x = x;
       this.y = y;
       this.color = color;
       this.piece = piece;

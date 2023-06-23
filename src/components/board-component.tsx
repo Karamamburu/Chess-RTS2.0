@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { SquareComponent } from './square-component';
-import { Board } from '../models/board';
-import { Square } from '../models/square';
+import Board from '../models/board';
+import Square from '../models/square';
 
 interface BoardProps {
   board: Board;
@@ -42,7 +42,7 @@ function updateBoard() {
             <SquareComponent
               square={square}
               key={square.id}
-              isSelected={square.x === selectedSquare?.x && square.y === selectedSquare?.y}
+              isSelected={square.x === selectedSquare?.x && square.y === selectedSquare?.y && !!selectedSquare?.piece}
               selectPiece={selectPiece}
             />
             )}

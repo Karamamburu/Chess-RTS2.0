@@ -1,10 +1,10 @@
 import { Colors } from "../colors";
-import { Square } from "../square";
-import { Piece, PiecesNames } from "./piece";
+import Square from "../square";
+import Piece, { PiecesNames } from "./piece";
 import blackBishop from '../../assets/bishop-black.png';
 import whiteBishop from '../../assets/bishop-white.png';
 
-export class Bishop extends Piece {
+export default class Bishop extends Piece {
 
   constructor(color: Colors, square: Square) {
     super(color, square);
