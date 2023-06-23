@@ -1,16 +1,21 @@
 import { Colors } from './colors';
-import { King } from './pieces/king';
-import { Queen } from './pieces/queen';
-import { Pawn } from './pieces/pawn';
-import { Square } from './square';
-import { Bishop } from './pieces/bishop';
-import { Knight } from './pieces/knight';
-import { Rook } from './pieces/rook';
+import King from './pieces/king';
+import Queen from './pieces/queen';
+import Pawn from './pieces/pawn';
+import Square from './square';
+import Bishop from './pieces/bishop';
+import Knight from './pieces/knight';
+import Rook from './pieces/rook';
 import { letterToNumberConverter } from '../util';
-import { classicChessPiecesPosition } from '../models/starting-positions';
-import { isYieldExpression } from 'typescript';
 
-export class Board {
+interface currentPiece {
+  piece: string;
+  color: string;
+  square: string;
+  id: string;
+}
+
+export default class Board {
   squares: Square[][] = []
 
   public createSquares() {
@@ -50,8 +55,8 @@ export class Board {
     return this.squares[y][x]
   }
 
-  public placePieces() {
-    for (const piece of classicChessPiecesPosition) {
+  public placePieces(startingPosition: currentPiece[]) {
+    for (const piece of startingPosition) {
       const { x, y } = letterToNumberConverter(piece.square);
       const color: Colors = piece.color as Colors;
   

@@ -1,5 +1,5 @@
 import { Colors } from '../colors';
-import { Square } from '../square';
+import Square from '../square';
 import img from '../../assets/king-white.png';
 
 export enum PiecesNames {
@@ -12,7 +12,7 @@ export enum PiecesNames {
   "PAWN" = "Pawn",
 }
 
-export class Piece {
+export default class Piece {
   color: Colors;
   img: typeof img | null;
   square: Square;
