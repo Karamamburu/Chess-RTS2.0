@@ -3,6 +3,8 @@ import './App.css';
 import { BoardComponent } from './components/board-component';
 import Board from './models/board';
 import { classicChessPiecesPosition } from './models/starting-positions';
+import { getStartingPositions } from './models/api';
+
 
 function App() {
   const [board, setBoard] = useState(new Board())
@@ -11,10 +13,12 @@ function App() {
     restart()
   }, [])
   
-  function restart() {
+  async function restart() {
     const newBoard = new Board()
+    const startingPositions = await getStartingPositions()
+    console.log(startingPositions)
     newBoard.createSquares()
-    newBoard.placePieces(classicChessPiecesPosition)
+    newBoard.placePieces(startingPositions)
     setBoard(newBoard)
   }
   
