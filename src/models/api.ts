@@ -1,15 +1,13 @@
-import axios from 'axios';
+import { io, Socket } from "socket.io-client";
 
 async function getStartingPositions() {
-  try {
-    const response = await axios.get('http://localhost:9000/active_connections');
-    const startingPosition = response.data;
+  const socket: Socket = io("ws://localhost:9000");
 
-    return startingPosition;
-    
-  } catch (error) {
-    console.error('Не удалось получить данные:', error);
-  }
+  socket.emit("ws");
+
+  socket.on("ws_response", (data: any) => {
+    console.log("Получены данные с сервера:", data);
+  });
 }
 
-export { getStartingPositions }
+export { getStartingPositions };
