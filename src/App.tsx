@@ -5,8 +5,7 @@ import Board from './models/board';
 import Button from './models/button';
 import { NewGameButtonComponent } from './components/new-game-button-component';
 import { searchGames, PLAYER_NAMES } from './models/api';
-
-
+import { getRandomArrayElement } from './util';
 
 function App() {
   const [board, setBoard] = useState<Board | null>(null);
@@ -23,15 +22,15 @@ function App() {
     newBoard.createSquares();
   
     try {
-      const response = await searchGames(PLAYER_NAMES[1]);
+      const response = await searchGames(getRandomArrayElement(PLAYER_NAMES));
       if (response && response.board) {
         newBoard.placePieces(response.board);
         setBoard(newBoard);
       } else {
-        console.error('Неверный формат данных:', response);
+        console.error('Ожидание соперника...', response);
       }
     } catch (error) {
-      console.error('Ошибка при выполнении запроса:', error);
+      console.error('У нас ошибка:', error);
     }
   }
 

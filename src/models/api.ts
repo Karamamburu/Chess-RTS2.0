@@ -1,16 +1,18 @@
 import axios from 'axios';
 
 const HANDLERS = {
-  searchGames: 'search_games'
+  searchGames: 'search_games',
+  foundGames: 'found_games',
+  readyPlayers: 'ready_players'
 }
-const PLAYER_NAMES = ['Vova', 'Denis', 'Test', 'Kto-to tam', 'Chess']
+const PLAYER_NAMES = ['Vova', 'Denis', 'Test', 'Kto-to tam', 'Chess', 'Michalych', 'Petrovich', 'Semyonych', 'Santa']
 
 const baseUrl = 'http://localhost:9000/'
 
 
 
-async function searchGames(plaerName: any): Promise<any> {
-  const url = 'http://localhost:9000/search_games';
+async function searchGames(plaerName: string): Promise<any> {
+  const url = `${baseUrl}${HANDLERS.searchGames}`
   const headers = {
     accept: 'application/json',
     name: plaerName,
