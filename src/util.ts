@@ -7,4 +7,14 @@ function letterToNumberConverter(square: string): { x: number; y: number } {
   return { x, y };
 }
 
-export { letterToNumberConverter }
+const getRandomInteger = (a: number, b: number) => {
+  const lower = Math.ceil(Math.min(a, b));
+  const higher = Math.floor(Math.max(a, b));
+  const result = Math.random() * (higher - lower + 1) + lower;
+
+  return Math.floor(result);
+};
+
+const getRandomArrayElement = (array: Array<string>) => array[getRandomInteger(0, array.length - 1)];
+
+export { letterToNumberConverter, getRandomArrayElement }
