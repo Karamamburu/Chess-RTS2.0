@@ -72,3 +72,11 @@
   color: white;
   background-color: rgb(0, 126, 19);
 }
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.flip-button {
+  background-color: red;
+}
